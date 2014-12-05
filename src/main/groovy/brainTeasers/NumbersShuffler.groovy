@@ -4,7 +4,7 @@ package brainTeasers
  * Created by mihail on 12/4/14.
  *
  * Generates a list with randomly shuffled numbers. Does not contain duplicates and only has numbers between
- * 0 and howMany -1
+ * 1 and howMany
  */
 class NumbersShuffler {
 
