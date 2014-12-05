@@ -28,6 +28,22 @@ class NumbersShuffler {
         shuffledArray
     }
 
+    /**
+     * there is a second approach that can be considered. The number of distinct shuffles is given by the number of
+     * permutations of numbers between 1 and howMany.
+     *
+     * Let's imagine these shuffles are ordered say in a lexicographical like ordering. For example for 3 numbers
+     * we have (1,2,3) (1,2,3) (2,1,3) (2,3,1) (3,1,2) (3,2,1). Important: we DO NOT store these permutations in memory.
+     * We just need to know how to generate a permutation given an index - this is a deterministic problem.
+     *
+     * Then the problem reduces to generating a "random" number between 1 and howMany! then figuring out the permutation
+     * located at that index. The complexity of this algorithm is still O(howMany). Note also that I need to switch from
+     * int to BigIntegers to handle something like a card deck. Painless in both Groovy and Clojure
+     *
+     * I will write the code for this later
+     */
+
+
 /**
  * @param max
  * @return a random integer between 0(inclusive) and max(exclusive)
