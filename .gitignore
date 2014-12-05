@@ -1,0 +1,17 @@
+out
+.gradle
+.idea/
+*.iml
+*.swp
+
+#OSX
+.DS_Store
+
+#Emacs
+*~
+\#*\#
+.\#*
+build/
+gradle/
+gradlew
+gradlew.bat
