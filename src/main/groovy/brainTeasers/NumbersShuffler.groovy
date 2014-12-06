@@ -28,20 +28,18 @@ class NumbersShuffler {
         shuffledArray
     }
 
-
 /**
  * @param max
  * @return a random integer between 0(inclusive) and max(exclusive)
- *
- * Note that the current implementation biases the distribution towards smaller numbers. For example if max is
- * 52, numbers between 0 and 12 are twice more likely to be selected that numbers between 13 and 51. It is easy to
- * generate a different distribution that will bias other numbers. However I do not know how to generate a uniform
- * random distribution and how to mathematically prove that it is uniform.
  */
     private static int random(int max) {
-        def randomBits = (1..numberOfRepresentativeBits(max)).inject([])
-                { list, value -> list + randomNumberGenerator.nextInt(2) }
-        bitListToDecimal(randomBits) % max
+        def randomNumber = Integer.MAX_VALUE
+        while (randomNumber >= max) {
+            def randomBits = (1..numberOfRepresentativeBits(max)).inject([])
+                    { list, value -> list + randomNumberGenerator.nextInt(2) }
+            randomNumber = bitListToDecimal(randomBits)
+        }
+        randomNumber
     }
 
     private static def bitListToDecimal(def randomBits) {
