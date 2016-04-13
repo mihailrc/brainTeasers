@@ -14,7 +14,7 @@ package brainTeasers
  * uses much less memory.
  *
  *
- * Attempting to process this in parallel as I suggested is also a bad idea and I don't know what I was thinking.
+ * Attempting to process this in parallel is also a bad idea.
  * This will just add significant complexity with no clear benefit. The limitation is the number of distinct elements
  * that need to be kept in memory(assuming one is not using HyperLogLog). Also the parallel implementation would not
  * work for an infinite stream.
@@ -25,7 +25,7 @@ class RepeatedSequence {
     List list
 
     //observation: the maximum list size without a repeated sequence is 10^subListSize so the
-    //algorithm is O(0) not O(n) as I said over the phone
+    //algorithm is O(0) not O(n)
     def findFirstRepeatedList(int subListSize) {
         def encounteredSubList = [] as Set
         for (index in (0..list.size() - subListSize)) {
